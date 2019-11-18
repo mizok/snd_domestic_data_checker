@@ -1,0 +1,32 @@
+{
+	"folders": [
+		{
+			"path": "."
+		}
+	],
+	"settings": {
+		"workbench.colorTheme": "Monokai",
+		"editor.minimap.enabled": false,
+		"emmet.triggerExpansionOnTab": true,
+		"gitlens.advanced.messages": {
+			"suppressShowKeyBindingsNotice": true
+		},
+		"window.zoomLevel": 1,
+		"liveServer.settings.port": 5600,
+	
+		
+		"editor.renderControlCharacters": true,
+		"liveSassCompile.settings.formats": [
+			{
+			  "format": "expanded",
+			  "extensionName": ".css",
+			  "savePath": "dist/css/"
+			}
+		],
+		"workbench.colorCustomizations": {
+			"activityBar.background": "#2C1E74",
+			"titleBar.activeBackground": "#3D29A2",
+			"titleBar.activeForeground": "#FDFCFE"
+		}
+	}
+}
