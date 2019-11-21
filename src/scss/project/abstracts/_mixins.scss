@@ -2,3 +2,17 @@
 // This file contains all application-wide Sass mixins.
 // -----------------------------------------------------------------------------
 
+@mixin color-gradient-main-v($direction: bottom, $theme: 'dark'){
+    $top-color: $bg-color-main1;
+    $bottom-color:  $color-sub2;
+
+    @if $theme == 'light' {
+    $top-color: $color-main1-light;
+    $bottom-color: $color-main1;
+    }
+    background-image: linear-gradient(to $direction, $top-color, $bottom-color);
+    background: -webkit-linear-gradient(to $direction, $top-color, $bottom-color);
+    background: -o-linear-gradient(to $direction, $top-color, $bottom-color);
+    background: -moz-linear-gradient(to $direction, $top-color, $bottom-color);
+    background: linear-gradient(to $direction, $top-color, $bottom-color);
+}

@@ -1,0 +1,229 @@
+.content{
+    
+    background: linear-gradient(to bottom, rgb(65, 65, 65) 0%, rgba(0,0,0,1) 100%);
+    position: relative;
+    z-index: 1;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    color:rgb(196, 195, 195);
+    overflow-x:hidden ;
+    @media screen and (max-width:992px){
+        background: linear-gradient(to bottom, $bg-color-main1 0%, $color-sub2 100%);
+        padding-top: 55px;
+    }
+    &:after{
+        content:'';
+        width: 100%;
+        height: 100%;
+        min-height: 600px;
+        display: block;
+        position: absolute;
+        z-index: 2;
+        left: 25%;
+        top: 0;
+        transform: skewX(-10deg) ;
+        @include color-gradient-main-v();
+        box-shadow: -7px -1px 29px 0px rgba(0,0,0,0.75);
+        @media screen and (max-width:992px){
+            display: none;
+
+        }
+    }
+    .inner{
+       height: 100%;
+       min-height: 600px;
+       overflow: auto;
+       display: flex;
+       justify-content: space-between;
+       @media screen and (max-width:992px){
+        display: block;
+        padding: 5%;
+        padding-top: 50px;
+        min-height: 0;
+        }
+    }
+    .profile{
+        padding-left: 30px;
+        padding-top: 80px;
+        font-weight: 300;
+        line-height: 1.5;
+        width: 25%;
+        padding-right: 10vh;
+        @media screen and (max-width:992px){
+            padding: 15px;
+            width: 100%;
+            border-radius: 10px;
+            border:1px solid $color-white; 
+        }
+        >*{
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            @media screen and (max-width:1600px){
+                display: block;
+            }
+            @media screen and (max-width:992px){
+                display: flex;
+                border-bottom: 1px dotted #eee;
+            }
+            +*{
+                margin-top: 15px;
+            }
+        }
+        .key{
+            font-weight: 300;
+            font-size: 20px;
+            border-bottom:1px dotted rgba(238, 238, 238, 0.3);
+            @media screen and (max-width:992px){
+                font-size: 16px;
+            }
+        }
+        .value{
+            font-weight: 300;
+            margin-top: 5px;
+            font-size: 14px;
+
+        }
+    }
+    .timeline{
+        height: 100%;
+        width: 75%;
+        position: relative;
+        z-index: 9;
+        overflow: auto;
+        padding-right: 30px;
+        padding-top: 20px;
+        padding-left: calc(10vh + 50px);
+        padding-bottom: 50px;
+        @media screen and (max-width:992px){
+            width: 100%;
+            margin-top: 50px;
+            padding-left: 0;
+            padding-right: 0;
+            padding-top: 0;
+            height:auto;
+        }
+        .yearComp{
+            .Year{
+                text-align: right;
+                @media screen and (max-width:992px){
+                    text-align: center;
+                }
+                h1{
+                    display: inline-block;
+                    letter-spacing: 0.2em;
+                    font-family: 'Monoton', cursive;
+                }
+                +.YearData{
+                    margin-top: 30px;
+                }
+            }
+            .YearData{
+                .plainObject{
+                    width: 100%;
+                    
+                    h1{
+                        margin-bottom: 30px;
+                        position: relative;
+                        cursor: pointer;
+                        &:after{
+                            position: absolute;
+                            content: '+';
+                            right: 0;
+                            text-align: center;
+                            top: 50%;
+                            transform: translateY(-50%);
+                            width: 30px;
+                            height: 30px;
+                            display: block;
+                            font-size: 40px;
+                            line-height: 25px;
+                        }
+                    }
+                    
+                    .plainObjectComp{
+                        
+                        .property{
+                            display: flex;
+                            justify-content: space-between;
+                            
+                            border-bottom: 1px dotted #eee;
+                            padding-bottom: 20px;
+                            &.fixed{
+                                >*{
+                                    flex:1;
+                                }
+                            }
+                            +.property{
+                                margin-top: 20px;
+                            }
+                            .key{
+                                font-size: 20px;
+                            }
+                            .value{
+                                font-size: 16px;
+                                word-break: break-all;
+                            }
+                        }
+                        .propertyTable{
+                            width: 100%;
+                            border-collapse:collapse;
+                            table-layout:fixed;
+                            border:1px solid #eee;
+                            
+                            tr{
+                                td{
+                                    vertical-align: middle;
+                                    text-align: center;
+                                    .propertyItem{
+                                        padding-top: 10px;
+                                        padding-bottom: 10px;
+                                        padding-left: 15px;
+                                        text-align: left;
+                                        word-break: break-all;
+                                        .propertyItemInner{
+                                            +.propertyItemInner{
+                                                margin-top: 10px;
+                                            }
+                                        }
+                                        +.propertyItem{
+                                            border-top:1px solid #eee;
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                        &.flex{
+                            display: flex;
+                            flex-wrap: wrap;
+                            border:1px solid #eee;
+                            .property{
+                                padding:10px;
+                                border:1px solid #eee;
+                                flex:none;
+                                width:calc(100% / 4);
+                                .propertyItemInner{
+                                    +.propertyItemInner{
+                                        margin-top: 10px;
+                                    }
+                                }
+                                +.property{
+                                    margin-top: 0;
+                                }
+                            }
+                        }
+                    }
+                    +.plainObject{
+                        margin-top: 50px;
+                    }
+                }
+            }
+            +.yearComp{
+                margin-top: 50px;
+            }
+        }
+        
+        
+    }
+}

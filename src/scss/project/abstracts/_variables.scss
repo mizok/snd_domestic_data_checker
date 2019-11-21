@@ -4,5 +4,70 @@
 
 
 
+// ======  01 color  ======
 
+// 01-1. grey
+$color-grey1: #414141; //color of text
+$color-grey3: #767676;
+$color-grey5: #C2C2C2;
+$color-grey7: #ECECEC;
+
+// 01-2. color of main/sub/other
+$color-main1: #007D8C;  // CI Color
+$color-main1-light: #b1dadd; //light main color
+$color-main2: #007AB3;  // blue action color
+$color-sub1: #224d9b;  // action color
+$color-sub2: #000000;  //  Adorn
+$color-sub3: $color-grey3;  // dark grey (4)
+$color-sub4: $color-grey7;  // light grey (5)
+
+// 01-3.background color
+$color-bg-sub1: #DCF7F1;
+$bg-color-main1: #081930;
+$bg-color-main1-light: $color-sub2;
+$bg-color-grey1: #f5f5f5;
+$bg-color-light-gary-blue: #ddeaf1;
+$color-bg: $bg-color-grey1;
+
+// 01-4. hightlight color
+$color-light1: #3da556;
+$color-light1-light: #88fea4;
+$color-light2: #F86200;
+$color-light2-light: #fcaa76;
+
+// 01-5. action color
+$color-active: $bg-color-grey1;
+$color-click:  #f1f9fa; // light blue
+$color-alert: #F1C8D0; // light pink
+$color-error: #DC3149; // light red
+$color-error-light: #f9a6a6;
+
+// 01-6. label color
+$color-label1: #FF934F;
+$color-label2: #FDD25C;
+$color-label3: #CCDD61;
+$color-label4: #7FE4E0;
+$color-label5: #96DCFA;
+$color-label6: #496EBD;
+$color-label7: #CAD4DE;
+
+//01-7. color common use
+$color-white: #fff;
+$color-black: #000;
+
+//01-8. other color
+$color-native: #007aff; //native ios color
+$color-link: #00a7ea;
+$color-loading: $color-grey7;
+
+//01-9. safe area
+$color-safe-area-btm: $color-black;
+$color-safe-area-top: $color-black;
+
+//01-10. text color
+$color-font-normal: $color-grey1;
+
+//01-11. shadow color
+$color-shadow-card: 0 2px 4px 0 rgba(0, 0, 0, 0.19);   // white card shadow
+$color-shadow-list: 0 0 19px 0 rgba(0, 41, 95, 0.31);  // list layout shadow
 

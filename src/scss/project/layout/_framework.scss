@@ -1,0 +1,20 @@
+html,body{
+    background-color: rgb(136, 136, 136);
+    height: 100%;
+}
+.site-wrapper{
+    @import 
+    'mask',
+    'entry',
+    'header',
+    'footer',
+    'menu',
+    'content';
+
+    height: 100%;
+
+}
+
+
+
+

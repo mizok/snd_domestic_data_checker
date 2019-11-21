@@ -1,0 +1,841 @@
+{
+  "Info": {
+    "OBMonth": "2014-07-31 00:00:00.0",
+    "AgentName": "林Ｏ遵",
+    "Gender": "M",
+    "OfficeName": "元ＯＯＯ處"
+  },
+  "Years": [
+    {
+      "Year": 2019,
+      "Configuration": {
+        "JobGrade": "SM",
+        "AppUseMode": "AL",
+        "CurrentJobSeniorityMonth": 13,
+        "NowToYearEndDays": 37,
+        "InitialPreCaseFyfc": 10137,
+        "WorkingQuarter": 4,
+        "GoalSigningSupervisor": "85930",
+        "WorkingMonth": 11,
+        "PerformanceSettlementMonth": 10,
+        "FyfcCovertAnpRate": 8,
+        "CurrentJobOBMonth": "2018-11-01"
+      },
+      "ApproveGoalVersion": {
+        "GoalSetMonth": 11,
+        "PersonnelGoalApplicableYM": 1,
+        "TeamGoalApplicableYM": 1,
+        "Values": [
+          {
+            "MappingID": "ACTIVITY_DAYS",
+            "Value": "40"
+          },
+          {
+            "MappingID": "ACTIVITY_FYFC",
+            "Value": "198540"
+          },
+          {
+            "MappingID": "ANNUAL_CONVENTION",
+            "Value": "Long_Term_Incentive_Trip_Program"
+          },
+          {
+            "MappingID": "MDRT",
+            "Value": "MDRT"
+          },
+          {
+            "MappingID": "PERSON_ANP",
+            "Value": "2160000"
+          },
+          {
+            "MappingID": "PERSON_FYFC",
+            "Value": "270000"
+          },
+          {
+            "MappingID": "PER_CASE_FYFC",
+            "Value": "10137"
+          },
+          {
+            "MappingID": "PROMOTION_PLAN",
+            "Value": "DM"
+          },
+          {
+            "MappingID": "TEAM_ANP",
+            "Value": "26420000"
+          },
+          {
+            "MappingID": "TEAM_FYFC",
+            "Value": "3310000"
+          },
+          {
+            "MappingID": "TEAM_MANPOWER",
+            "Value": "28"
+          },
+          {
+            "MappingID": "TEAM_RECRUITMENT",
+            "Value": "10"
+          }
+        ],
+        "PersonalPlans": [
+          {
+            "Month": 1,
+            "Value": "22500"
+          },
+          {
+            "Month": 2,
+            "Value": "22500"
+          },
+          {
+            "Month": 3,
+            "Value": "22500"
+          },
+          {
+            "Month": 4,
+            "Value": "22500"
+          },
+          {
+            "Month": 5,
+            "Value": "22500"
+          },
+          {
+            "Month": 6,
+            "Value": "22500"
+          },
+          {
+            "Month": 7,
+            "Value": "22500"
+          },
+          {
+            "Month": 8,
+            "Value": "22500"
+          },
+          {
+            "Month": 9,
+            "Value": "22500"
+          },
+          {
+            "Month": 10,
+            "Value": "22500"
+          },
+          {
+            "Month": 11,
+            "Value": "150000"
+          },
+          {
+            "Month": 12,
+            "Value": "102540"
+          }
+        ],
+        "TeamPlans": [
+          {
+            "Month": 4,
+            "Value": "124378"
+          },
+          {
+            "Month": 6,
+            "Value": "192185"
+          },
+          {
+            "Month": 11,
+            "Value": "483322"
+          },
+          {
+            "Month": 5,
+            "Value": "207303"
+          },
+          {
+            "Month": 8,
+            "Value": "226119"
+          },
+          {
+            "Month": 10,
+            "Value": "225000"
+          },
+          {
+            "Month": 12,
+            "Value": "435862"
+          },
+          {
+            "Month": 9,
+            "Value": "225769"
+          },
+          {
+            "Month": 2,
+            "Value": "229781"
+          },
+          {
+            "Month": 3,
+            "Value": "311627"
+          },
+          {
+            "Month": 1,
+            "Value": "141338"
+          },
+          {
+            "Month": 7,
+            "Value": "242103"
+          }
+        ]
+      },
+      "CurrentGoalVersion": {
+        "TeamGoalApplicableYM": 1,
+        "PersonalPlans": [
+          {
+            "Month": 1,
+            "Value": "22500"
+          },
+          {
+            "Month": 2,
+            "Value": "22500"
+          },
+          {
+            "Month": 3,
+            "Value": "22500"
+          },
+          {
+            "Month": 4,
+            "Value": "22500"
+          },
+          {
+            "Month": 5,
+            "Value": "22500"
+          },
+          {
+            "Month": 6,
+            "Value": "22500"
+          },
+          {
+            "Month": 7,
+            "Value": "22500"
+          },
+          {
+            "Month": 8,
+            "Value": "22500"
+          },
+          {
+            "Month": 9,
+            "Value": "22500"
+          },
+          {
+            "Month": 10,
+            "Value": "22500"
+          },
+          {
+            "Month": 11,
+            "Value": "150000"
+          },
+          {
+            "Month": 12,
+            "Value": "102540"
+          }
+        ],
+        "Values": [
+          {
+            "MappingID": "ACTIVITY_DAYS",
+            "Value": "40"
+          },
+          {
+            "MappingID": "ACTIVITY_FYFC",
+            "Value": "198540"
+          },
+          {
+            "MappingID": "ANNUAL_CONVENTION",
+            "Value": "Long_Term_Incentive_Trip_Program"
+          },
+          {
+            "MappingID": "MDRT",
+            "Value": "MDRT"
+          },
+          {
+            "MappingID": "PERSON_ANP",
+            "Value": "2160000"
+          },
+          {
+            "MappingID": "PERSON_FYFC",
+            "Value": "270000"
+          },
+          {
+            "MappingID": "PER_CASE_FYFC",
+            "Value": "10137"
+          },
+          {
+            "MappingID": "PROMOTION_PLAN",
+            "Value": "DM"
+          },
+          {
+            "MappingID": "TEAM_ANP",
+            "Value": "26420000"
+          },
+          {
+            "MappingID": "TEAM_FYFC",
+            "Value": "3310000"
+          },
+          {
+            "MappingID": "TEAM_MANPOWER",
+            "Value": "28"
+          },
+          {
+            "MappingID": "TEAM_RECRUITMENT",
+            "Value": "10"
+          }
+        ],
+        "GoalSetMonth": 11,
+        "PersonnelGoalApplicableYM": 1,
+        "TeamPlans": [
+          {
+            "Month": 4,
+            "Value": "124378"
+          },
+          {
+            "Month": 6,
+            "Value": "192185"
+          },
+          {
+            "Month": 11,
+            "Value": "483322"
+          },
+          {
+            "Month": 5,
+            "Value": "207303"
+          },
+          {
+            "Month": 8,
+            "Value": "226119"
+          },
+          {
+            "Month": 10,
+            "Value": "225000"
+          },
+          {
+            "Month": 12,
+            "Value": "435862"
+          },
+          {
+            "Month": 9,
+            "Value": "225769"
+          },
+          {
+            "Month": 2,
+            "Value": "229781"
+          },
+          {
+            "Month": 3,
+            "Value": "311627"
+          },
+          {
+            "Month": 1,
+            "Value": "141338"
+          },
+          {
+            "Month": 7,
+            "Value": "242103"
+          }
+        ]
+      },
+      "PersonalActual": [
+        {
+          "Month": 1,
+          "FYFC": 32186,
+          "Manpower": 1,
+          "ANP": 179425,
+          "Recruitment": 0
+        },
+        {
+          "Month": 2,
+          "FYFC": 0,
+          "Manpower": 0,
+          "ANP": 0,
+          "Recruitment": 0
+        },
+        {
+          "Month": 3,
+          "FYFC": 0,
+          "Manpower": 1,
+          "ANP": 0,
+          "Recruitment": 0
+        },
+        {
+          "Month": 4,
+          "FYFC": 4531,
+          "Manpower": 1,
+          "ANP": 101268,
+          "Recruitment": 0
+        },
+        {
+          "Month": 5,
+          "FYFC": 1010,
+          "Manpower": 1,
+          "ANP": 3368,
+          "Recruitment": 0
+        },
+        {
+          "Month": 6,
+          "FYFC": 21297,
+          "Manpower": 1,
+          "ANP": 84297,
+          "Recruitment": 0
+        },
+        {
+          "Month": 7,
+          "FYFC": 11309,
+          "Manpower": 1,
+          "ANP": 122923,
+          "Recruitment": 0
+        },
+        {
+          "Month": 8,
+          "FYFC": 1127,
+          "Manpower": 1,
+          "ANP": 27204,
+          "Recruitment": 0
+        },
+        {
+          "Month": 9,
+          "FYFC": 0,
+          "Manpower": 1,
+          "ANP": 0,
+          "Recruitment": 0
+        },
+        {
+          "Month": 10,
+          "FYFC": 0,
+          "Manpower": 1,
+          "ANP": 0,
+          "Recruitment": 0
+        },
+        {
+          "Month": 11,
+          "FYFC": 0,
+          "Manpower": 1,
+          "ANP": 0,
+          "Recruitment": 0
+        }
+      ],
+      "TeamActual": [
+        {
+          "Month": 1,
+          "FYFC": 162797,
+          "Manpower": 18,
+          "ANP": 1105840,
+          "Recruitment": 2
+        },
+        {
+          "Month": 2,
+          "FYFC": 55870,
+          "Manpower": 0,
+          "ANP": 753244,
+          "Recruitment": 0
+        },
+        {
+          "Month": 3,
+          "FYFC": 422744,
+          "Manpower": 19,
+          "ANP": 2331244,
+          "Recruitment": 2
+        },
+        {
+          "Month": 4,
+          "FYFC": 93868,
+          "Manpower": 16,
+          "ANP": 585751,
+          "Recruitment": 1
+        },
+        {
+          "Month": 5,
+          "FYFC": 147160,
+          "Manpower": 16,
+          "ANP": 919779,
+          "Recruitment": 0
+        },
+        {
+          "Month": 6,
+          "FYFC": 139014,
+          "Manpower": 16,
+          "ANP": 757612,
+          "Recruitment": 1
+        },
+        {
+          "Month": 7,
+          "FYFC": 47162,
+          "Manpower": 9,
+          "ANP": 421273,
+          "Recruitment": 1
+        },
+        {
+          "Month": 8,
+          "FYFC": 82280,
+          "Manpower": 9,
+          "ANP": 508934,
+          "Recruitment": 0
+        },
+        {
+          "Month": 9,
+          "FYFC": 9351,
+          "Manpower": 9,
+          "ANP": 40521,
+          "Recruitment": 0
+        },
+        {
+          "Month": 10,
+          "FYFC": 0,
+          "Manpower": 9,
+          "ANP": 0,
+          "Recruitment": 0
+        },
+        {
+          "Month": 11,
+          "FYFC": 0,
+          "Manpower": 12,
+          "ANP": 0,
+          "Recruitment": 0
+        }
+      ],
+      "Expected": [
+        {
+          "Quarter": 1,
+          "Value": "0"
+        },
+        {
+          "Quarter": 2,
+          "Value": "0"
+        },
+        {
+          "Quarter": 3,
+          "Value": "0"
+        },
+        {
+          "Quarter": 4,
+          "Value": "6"
+        }
+      ]
+    },
+    {
+      "PersonalActual": [],
+      "Expected": [],
+      "Year": 2020,
+      "Configuration": {
+        "CurrentJobSeniorityMonth": 13,
+        "NowToYearEndDays": 365,
+        "InitialPreCaseFyfc": 10137,
+        "AppUseMode": "AL",
+        "WorkingQuarter": 0,
+        "GoalSigningSupervisor": "85930",
+        "JobGrade": "SM",
+        "WorkingMonth": 0,
+        "PerformanceSettlementMonth": 0,
+        "FyfcCovertAnpRate": 8,
+        "CurrentJobOBMonth": "2018-11-01"
+      },
+      "CurrentGoalVersion": {
+        "TeamGoalApplicableYM": 1,
+        "PersonalPlans": [
+          {
+            "Month": 1,
+            "Value": "22500"
+          },
+          {
+            "Month": 2,
+            "Value": "22500"
+          },
+          {
+            "Month": 3,
+            "Value": "22500"
+          },
+          {
+            "Month": 4,
+            "Value": "22500"
+          },
+          {
+            "Month": 5,
+            "Value": "22500"
+          },
+          {
+            "Month": 6,
+            "Value": "22500"
+          },
+          {
+            "Month": 7,
+            "Value": "22500"
+          },
+          {
+            "Month": 8,
+            "Value": "22500"
+          },
+          {
+            "Month": 9,
+            "Value": "22500"
+          },
+          {
+            "Month": 10,
+            "Value": "22500"
+          },
+          {
+            "Month": 11,
+            "Value": "22500"
+          },
+          {
+            "Month": 12,
+            "Value": "22500"
+          }
+        ],
+        "Values": [
+          {
+            "MappingID": "ACTIVITY_DAYS",
+            "Value": "365"
+          },
+          {
+            "MappingID": "ACTIVITY_FYFC",
+            "Value": "270000"
+          },
+          {
+            "MappingID": "ANNUAL_CONVENTION",
+            "Value": "Summit_Trip"
+          },
+          {
+            "MappingID": "MDRT",
+            "Value": "MDRT"
+          },
+          {
+            "MappingID": "PERSON_ANP",
+            "Value": "2160000"
+          },
+          {
+            "MappingID": "PERSON_FYFC",
+            "Value": "270000"
+          },
+          {
+            "MappingID": "PER_CASE_FYFC",
+            "Value": "20000"
+          },
+          {
+            "MappingID": "PROMOTION_PLAN",
+            "Value": "DM"
+          },
+          {
+            "MappingID": "TEAM_ANP",
+            "Value": "26420000"
+          },
+          {
+            "MappingID": "TEAM_FYFC",
+            "Value": "3310000"
+          },
+          {
+            "MappingID": "TEAM_MANPOWER",
+            "Value": "19"
+          },
+          {
+            "MappingID": "TEAM_RECRUITMENT",
+            "Value": "10"
+          }
+        ],
+        "GoalSetMonth": 11,
+        "PersonnelGoalApplicableYM": 1,
+        "TeamPlans": [
+          {
+            "Month": 4,
+            "Value": "270000"
+          },
+          {
+            "Month": 6,
+            "Value": "270000"
+          },
+          {
+            "Month": 11,
+            "Value": "270000"
+          },
+          {
+            "Month": 5,
+            "Value": "270000"
+          },
+          {
+            "Month": 8,
+            "Value": "270000"
+          },
+          {
+            "Month": 10,
+            "Value": "270000"
+          },
+          {
+            "Month": 12,
+            "Value": "270000"
+          },
+          {
+            "Month": 9,
+            "Value": "270000"
+          },
+          {
+            "Month": 2,
+            "Value": "270000"
+          },
+          {
+            "Month": 3,
+            "Value": "270000"
+          },
+          {
+            "Month": 1,
+            "Value": "270000"
+          },
+          {
+            "Month": 7,
+            "Value": "270000"
+          }
+        ]
+      },
+      "TeamActual": [],
+      "ApproveGoalVersion": {
+        "TeamGoalApplicableYM": 1,
+        "PersonalPlans": [
+          {
+            "Month": 1,
+            "Value": "22500"
+          },
+          {
+            "Month": 2,
+            "Value": "22500"
+          },
+          {
+            "Month": 3,
+            "Value": "22500"
+          },
+          {
+            "Month": 4,
+            "Value": "22500"
+          },
+          {
+            "Month": 5,
+            "Value": "22500"
+          },
+          {
+            "Month": 6,
+            "Value": "22500"
+          },
+          {
+            "Month": 7,
+            "Value": "22500"
+          },
+          {
+            "Month": 8,
+            "Value": "22500"
+          },
+          {
+            "Month": 9,
+            "Value": "22500"
+          },
+          {
+            "Month": 10,
+            "Value": "22500"
+          },
+          {
+            "Month": 11,
+            "Value": "22500"
+          },
+          {
+            "Month": 12,
+            "Value": "22500"
+          }
+        ],
+        "Values": [
+          {
+            "MappingID": "ACTIVITY_DAYS",
+            "Value": "365"
+          },
+          {
+            "MappingID": "ACTIVITY_FYFC",
+            "Value": "270000"
+          },
+          {
+            "MappingID": "ANNUAL_CONVENTION",
+            "Value": "Summit_Trip"
+          },
+          {
+            "MappingID": "MDRT",
+            "Value": "MDRT"
+          },
+          {
+            "MappingID": "PERSON_ANP",
+            "Value": "2160000"
+          },
+          {
+            "MappingID": "PERSON_FYFC",
+            "Value": "270000"
+          },
+          {
+            "MappingID": "PER_CASE_FYFC",
+            "Value": "20000"
+          },
+          {
+            "MappingID": "PROMOTION_PLAN",
+            "Value": "DM"
+          },
+          {
+            "MappingID": "TEAM_ANP",
+            "Value": "26420000"
+          },
+          {
+            "MappingID": "TEAM_FYFC",
+            "Value": "3310000"
+          },
+          {
+            "MappingID": "TEAM_MANPOWER",
+            "Value": "19"
+          },
+          {
+            "MappingID": "TEAM_RECRUITMENT",
+            "Value": "10"
+          }
+        ],
+        "GoalSetMonth": 11,
+        "PersonnelGoalApplicableYM": 1,
+        "TeamPlans": [
+          {
+            "Month": 4,
+            "Value": "270000"
+          },
+          {
+            "Month": 6,
+            "Value": "270000"
+          },
+          {
+            "Month": 11,
+            "Value": "270000"
+          },
+          {
+            "Month": 5,
+            "Value": "270000"
+          },
+          {
+            "Month": 8,
+            "Value": "270000"
+          },
+          {
+            "Month": 10,
+            "Value": "270000"
+          },
+          {
+            "Month": 12,
+            "Value": "270000"
+          },
+          {
+            "Month": 9,
+            "Value": "270000"
+          },
+          {
+            "Month": 2,
+            "Value": "270000"
+          },
+          {
+            "Month": 3,
+            "Value": "270000"
+          },
+          {
+            "Month": 1,
+            "Value": "270000"
+          },
+          {
+            "Month": 7,
+            "Value": "270000"
+          }
+        ]
+      }
+    }
+  ]
+}

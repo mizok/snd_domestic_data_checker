@@ -18,9 +18,8 @@
 @import
   'abstracts/variables',
   'abstracts/functions',
-  'abstracts/mixins';
-
-
+  'abstracts/mixins',
+  'abstracts/keyframe';
 // 3. Base stuff
 @import
   'base/base',
@@ -28,8 +27,7 @@
 
 // 4. Layout-related sections
 @import
-  'layout/header',
-  'layout/footer';
+  'layout/framework';
 
 // 5. Components
 // @import
@@ -41,7 +39,7 @@
 
 // 7. Themes
 @import
-  'themes/default';
+'themes/default';
 
 
 

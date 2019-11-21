@@ -1,0 +1,22 @@
+@keyframes fadeInUpSmall{
+    0%{
+        transform:translateY(10%);
+        opacity: 0;
+    }
+    100%{
+        transform:translateY(0%);
+        opacity: 1;
+    }
+}
+
+@keyframes transitionCover{
+    0%{
+        transform:scaleX(1.5) skewX(15deg) translateX(-150%);
+    }
+    50%{
+        transform:scaleX(1.5) skewX(15deg) translateX(100%);
+    }
+    100%{
+        transform:scaleX(1.5) skewX(15deg) translateX(150%);
+    }
+}

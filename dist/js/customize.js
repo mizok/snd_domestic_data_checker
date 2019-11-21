@@ -36,7 +36,10 @@ function bindingEvent(){
 var _isResize = false,
     _isScroll = false;
 var _initial = [
-     
+    $menu,
+    $entryUI,
+    $content,
+    $transitionMask
 ];
 var _onResize = [],
     _onScroll = [],
@@ -45,9 +48,8 @@ var _onResize = [],
 //判斷手機為body新增class
 if(isMobile){$('body').addClass('isMobile');}
 
-//GardenUtil
-// GardenUtilsFunction();
-//end : GardenUtil
+// 填入shadowNull DOM
+getShadowNull();
 
 //初始所有initial function
 $.each(_initial,function(i,o){
@@ -74,9 +76,6 @@ $.each(_initial,function(i,o){
 //套件 function
 pluginFunction();
 //end : 套件 function
-
-// 
-ConrtolBar();
 
 //Resize動作
 $(window).resize(function(){
@@ -124,6 +123,10 @@ var $windowData = {  width:     $(window).outerWidth()
 var isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry/i.test(navigator.userAgent);
 
 //===========
+// 全域變數群
+
+var dataFileName = null;
+//===========
 // 版型類function初始化規則
 
 // var $sampleFunction = {
@@ -144,49 +147,324 @@ var isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry/i.test(navigator.userA
 //     }
 // }
 
+var $entryUI = {
+    key:'.entry'
+    ,initial:function(){
+        //初始需要執行的程式
+        var _this = this;
+        if(this.keyHas){
+            var $keyDom = this.keyDom;
+            $keyDom.find('.input-block .comfirm').on('click',function(e){
+                e.preventDefault();
+                dataFileName = $(this).siblings('input').val();
+                $(this).parents('.input-block').find('.error-msg').hide();
+                $.ajax({
+                    url:'../../src/json/'+dataFileName+'.json',
+                    type:'HEAD',
+                    error: function()
+                    {
+                        _this.showError();
+                    },
+                    success: function()
+                    {
+                        $keyDom.find('.input-block').addClass('blocked').delay(2000).queue(function(){
+                            $(this).removeClass('blocked').dequeue();
+                        })
+                        $content.formUp();
+                        $keyDom.delay(350).fadeOut();
+                        $menu.showUp();
+                        $transitionMask.refresh();
+                    }
+                });
+            })
+        }
+    }
+    ,showError:function(){
+        var $keyDom = this.keyDom;
+        $keyDom.find('.input-block').find('.error-msg').html('無效的檔名或json檔案不存在');
+        $keyDom.find('.input-block').find('.error-msg').fadeIn();
+    }
+    ,showUp:function(){
+        var $keyDom = this.keyDom;
+        $keyDom.delay(350).fadeIn();
+    }
+}
 
-//滑桿控制特效
-function ConrtolBar(){
-var thisBar = $('.bnp-comp-conrtol-bar');
-if(thisBar.length > 0){
-    thisBar.each(function(){
-        var thisDom = $(this);
-        thisDom.find('.conrtol-bar-btn').on('mousedown touchstart',function(e){
-            e.preventDefault();
-            var oldX = e.pageX?e.pageX:e.originalEvent.targetTouches[0].pageX;
-
-            var thisBtn = $(this);
-            var thisParent = thisBtn.parents('.bnp-comp-conrtol-bar');
-            var thisParentoffSetLeft = thisParent.offset().left;
-            var thisOffsetLeft = thisBtn.offset().left;
-            var innerLeft = thisOffsetLeft - thisParentoffSetLeft;
-            // var thisInput = thisParent.parents('.one-content').find('input');
-            $('body').addClass('bnp-comp-conrtol-bar-move');
-            $('body.bnp-comp-conrtol-bar-move').on('mousemove touchmove',function(e){
-                var newX = e.pageX?e.pageX:e.originalEvent.targetTouches[0].pageX;
-                var finalNum = ((innerLeft+(newX - oldX))/thisParent.width()*100)>100?100:((innerLeft+(newX - oldX))/thisParent.width()*100);
-                thisParent.find('.conrtol-bar-color').css('width',finalNum+'%');
-                if(finalNum>=0){
-                    thisParent.find('.conrtol-bar-btn').css('left',finalNum+'%');
-
+var $transitionMask = {
+    key:'.transition-mask'
+    ,refresh :function(callback){
+        if(this.keyHas){
+            
+            this.keyDom.addClass('animated').queue(function(){
+                if(callback){
+                    callback.apply();
                 }
-            });
-            $('body.bnp-comp-conrtol-bar-move').on('mouseup touchend',function(e){
-                $(this).unbind("mouseleave").unbind("mousemove").unbind('mouseup').unbind('touchend').unbind("touchmove");
-                $('body').removeClass('bnp-comp-conrtol-bar-move');
-            });
-        });
-
-    //    thisDom.parents('.one-content').find('input').on('change', function(){
-    //         thisDom.find('.conrtol-bar-color').css('width',$(this).val()+'%');
-    //     });
-
-    });
+                $(this).dequeue();
+            })
+            .delay(1000).queue(function(){
+                $(this).removeClass('animated').dequeue();
+                
+                
+            })
+           
+        }
+            
+            
+    
+        
+    }
 }
+
+var $menu = {
+    key:'.menu-wrapper'
+    ,initial:function(){
+        //初始需要執行的程式
+        //bind hamburger-click
+        if(this.keyHas){
+            // var onTransition = false;
+            this.keyDom.find('.hamburger').click(function(){
+                if(!$(this).hasClass('blocked')){
+                    $transitionMask.refresh(function(){
+                        $entryUI.showUp();
+                        setTimeout(function(){
+                            $content.deform();
+                        },500)
+                      
+                        
+                        
+                        
+                    });
+                }
+                
+                
+                
+                
+                // var $menu  = $(this).parent().siblings('.menu').removeClass('animated');
+                // if(!$(this).hasClass('is-active')&&!onTransition){
+                //     $(this).addClass('is-active');
+                //     $menu.addClass('show animated');
+                //     setTimeout(function(){
+                //         onTransition = true;
+                //     },1000)
+                // }
+                // else if($(this).hasClass('is-active')&&onTransition){
+                //     $(this).removeClass('is-active');
+                //     setTimeout(function(){
+                //         $menu.addClass('animated reverse');
+                //         setTimeout(function(){
+                //             $menu.removeClass('animated reverse show');
+                //             onTransition = false;
+                //         },1000)
+                //     })
+                // }
+            })
+            this.hide();
+        }
+    }
+    ,showUp:function(){
+        if(this.keyHas){
+            this.keyDom.fadeIn();
+        }
+    }
+    ,hide:function(){
+        if(this.keyHas){
+            this.keyDom.hide();
+        }
+    }
+};
+
+var $content = {
+    key :'.content'
+    ,formUp:function(){
+        var $keyDom = this.keyDom;
+        $keyDom.data('originalForm',$keyDom.html());
+        $.getJSON('../../src/json/'+dataFileName+'.json',
+            function (data) {
+                if(data){
+                    var info = data.Info;
+                    var years = data.Years;
+                    var $profile = $keyDom.find('.profile');
+    
+                    $profile.find('.AgentName .value').html(info.AgentName);
+                    $profile.find('.OBMonth .value').html(info.OBMonth);
+                    $profile.find('.Gender .value').html(info.Gender);
+                    $profile.find('.OfficeName .value').html(info.OfficeName);
+    
+                    var $timeline = $keyDom.find('.timeline');
+                    years.forEach(function(element){
+                        var yearComp = $(
+                            '<div class="yearComp">'+
+                            '<div class="Year">'+
+                            '<h1>'+element.Year+'</h1>'+
+                            '</div>'+
+                            '<div class="YearData">'+
+                            
+                            '</div>'+
+                            '</div>'
+                        ).clone();
+                        function _plainObjectToJQObj(objectName,targetObject){
+                            if(targetObject){
+                                if(!Array.isArray(targetObject)){
+                                    var targetArray = Object.keys(targetObject).map(function(key) {
+                                        return [String(key), targetObject[key]];
+                                    });
+                                }
+                                else {
+                                    var targetArray = targetObject;
+                                }
+                               
+                                var targetComp = $(
+                                    '<div class="'+
+                                    objectName+' '+'plainObject'+
+                                    '">'+
+                                    '<h1>'+objectName+
+                                    '</h1>'+
+                                    '<div class="'+
+                                    objectName.toLowerCase()+'Comp'+' '+'plainObjectComp'+
+                                    '">'+
+                                    '</div>'+
+                                    '</div>'
+                                    ).clone();
+                                targetArray.forEach(function(property){
+                                    if(Array.isArray(property[1])){
+                                        var propertyArray = [];
+                                        property[1].forEach(function(ele){
+                                            if(Array.isArray(ele)){
+                                                propertyArray.push(ele.toString());
+                                            }
+                                            else{
+                                                var propertyItemValue = Object.keys(ele).map(function(key){
+                                                    return [String(key), ele[key]];
+                                                })
+                                                var propertyString = '';
+                                                var item =$(
+                                                    '<div class="propertyItem"></div>'
+                                                    ).clone();
+                                                propertyItemValue.forEach(function(ele){
+    
+                                                    var eleString = ele.toString().replace(',',':');
+    
+                                                    var itemInner =$(
+                                                        '<div class="propertyItemInner">'+eleString+'</div>'
+                                                        ).clone();
+                                                    
+                                                    item.append(itemInner);
+                                                });
+                                                
+                                                propertyArray.push(item);
+                                            }
+                                        })
+                                        var propertyEle = $(
+                                            '<div class="property">'
+                                            +'<table class="propertyTable" border="1">'
+                                            +'<tr>'
+                                            +'<td class="key">'
+                                            + property[0]
+                                            +'</td>'
+                                            +'<td class="value">'
+                                            +'</td>'
+                                            +'</tr>'
+                                            +'</table>'
+                                            +'</div>'
+                                            ).clone();
+                                        propertyArray.forEach(function(element){
+                                            if(typeof(element)=='string'){
+                                                propertyEle.find('.value').append('<div class="item">'+element+'</div>');
+                                            }
+                                            else{
+                                                propertyEle.find('.value').append(element);
+                                            }
+                                        })
+                                    }
+                                    else if(Array.isArray(targetObject)){
+                                        targetComp.find('.plainObjectComp').addClass('flex');
+                                        var item =$(
+                                            '<div class="propertyItem"></div>'
+                                            ).clone();
+                                        
+                                        var propertyItemArray = Object.keys(property).map(function(key) {
+                                            return [String(key), property[key]];
+                                        });
+    
+                                        propertyItemArray.forEach(function(ele){
+    
+                                            var eleString = ele.toString().replace(',',':');
+    
+                                            var itemInner =$(
+                                                '<div class="propertyItemInner">'+eleString+'</div>'
+                                                ).clone();
+                                            
+                                            item.append(itemInner);
+                                        });
+    
+                                        var propertyEle = $(
+                                            '<div class="property">'
+    
+                                            +'<div class="value">'
+                                            +'</div>'
+                                            +'</div>'
+                                            ).clone();
+    
+                                            propertyEle.find('.value').append(item);
+                                            
+                                    }
+                                    else{
+                                        var propertyEle = $(
+                                            '<div class="property">'
+                                            +'<div class="key">'
+                                            + property[0]
+                                            +'</div>'
+                                            +'<div class="value">'
+                                            + property[1]
+                                            +'</div>'
+                                            +'</div>'
+                                            ).clone();
+                                    }
+                                    targetComp.find(
+                                        '.'+objectName.toLowerCase()+'Comp'
+                                    ).append(propertyEle);
+                                    targetComp.wrap('<div class="'+objectName+'"></div>');
+                                });
+                                return targetComp;
+                            }
+                            
+                            
+                        }
+                       
+                        var configurationBundle =  _plainObjectToJQObj('Configuration',element.Configuration);
+                        var approveGoalVersionBundle =  _plainObjectToJQObj('ApproveGoalVersion',element.ApproveGoalVersion);
+                        var currentGoalVersionBundle =  _plainObjectToJQObj('CurrentGoalVersion',element.CurrentGoalVersion);
+                        var personalActualBundle =  _plainObjectToJQObj('PersonalActual',element.PersonalActual);
+                        var teamActualBundle =  _plainObjectToJQObj('TeamActual',element.TeamActual);
+                        var expectedBundle =  _plainObjectToJQObj('Expected',element.Expected);
+    
+                        yearComp.find('.YearData').append(configurationBundle);
+                        yearComp.find('.YearData').append(approveGoalVersionBundle);
+                        yearComp.find('.YearData').append(currentGoalVersionBundle);
+                        yearComp.find('.YearData').append(personalActualBundle);
+                        yearComp.find('.YearData').append(teamActualBundle);
+                        yearComp.find('.YearData').append(expectedBundle);
+                        $timeline.append(yearComp);
+                        $timeline.find('.plainObject>h1').off('click').on('click',function(e){
+                            e.preventDefault();
+                            $(this).siblings('.plainObjectComp').slideToggle();
+                        })
+                    })
+    
+                }
+            }   
+        );
+    }
+    ,deform:function(){
+        var $keyDom = this.keyDom;
+        $keyDom.html($keyDom.data('originalForm'));
+    }
 }
+
 
 
 //=============== tool ====================//
+
 var $childToggleActive = {
     key:'[childToggleActive]'
     ,_toogleFunction: function(dom){
@@ -610,7 +888,8 @@ var $backHistoryPage = {
     }
 }
 //=============== tool: end ===============//
-//===========   GardenUtils function     ===========//
+//===========   tool function     ===========//
+
 function listChinese(){
     var domList = $('[effect-list-chinese]');
     if(domList.length > 0){
@@ -745,7 +1024,33 @@ function listChinese(){
     }
 }
 
-//===========   GardenUtils function: end===========//
+function getdataObject(id){
+    
+}
+
+function getShadowNull(){
+    var body = $('body');
+    var shadow_existence = $('.shadow-null').length;
+	if(!shadow_existence){
+		var shadow_null=$('<div class="shadow-null"></div>').css({
+            'position': 'fixed',
+            'pointer-events':'none',
+    		'width': '100%',
+    		'height': '100%',
+    		'z-index': '-9999999999999999999999999999999'
+		}).clone();
+		body.prepend(shadow_null);
+	}
+	else if(shadow_existence){
+        var size = {
+            x:$('.shadow-null').width(),
+            y:$('.shadow-null').height()
+        }
+		return size;
+	}
+}
+
+//===========   tool function: end===========//
 
 
 //===========   plugin function ============//
