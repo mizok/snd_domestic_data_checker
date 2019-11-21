@@ -127,6 +127,9 @@
                         margin-bottom: 30px;
                         position: relative;
                         cursor: pointer;
+                        @media screen and (max-width:600px){
+                            font-size: 20px;
+                        }
                         &:after{
                             position: absolute;
                             content: '+';

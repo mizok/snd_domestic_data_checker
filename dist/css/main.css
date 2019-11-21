@@ -13987,6 +13987,12 @@ html, body {
   cursor: pointer;
 }
 
+@media screen and (max-width: 600px) {
+  .site-wrapper .content .timeline .yearComp .YearData .plainObject h1 {
+    font-size: 20px;
+  }
+}
+
 .site-wrapper .content .timeline .yearComp .YearData .plainObject h1:after {
   position: absolute;
   content: '+';

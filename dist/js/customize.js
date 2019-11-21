@@ -159,7 +159,7 @@ var $entryUI = {
                 dataFileName = $(this).siblings('input').val();
                 $(this).parents('.input-block').find('.error-msg').hide();
                 $.ajax({
-                    url:'../../src/json/'+dataFileName+'.json',
+                    url:'../snd_domestic_data_checker/src/json/'+dataFileName+'.json',
                     type:'HEAD',
                     error: function()
                     {
@@ -218,11 +218,13 @@ var $transitionMask = {
 var $menu = {
     key:'.menu-wrapper'
     ,initial:function(){
+        var _this=this;
         //初始需要執行的程式
         //bind hamburger-click
         if(this.keyHas){
             // var onTransition = false;
             this.keyDom.find('.hamburger').click(function(){
+                _this.hide();
                 if(!$(this).hasClass('blocked')){
                     $transitionMask.refresh(function(){
                         $entryUI.showUp();
@@ -278,7 +280,7 @@ var $content = {
     ,formUp:function(){
         var $keyDom = this.keyDom;
         $keyDom.data('originalForm',$keyDom.html());
-        $.getJSON('../../src/json/'+dataFileName+'.json',
+        $.getJSON('../snd_domestic_data_checker/src/json/'+dataFileName+'.json',
             function (data) {
                 if(data){
                     var info = data.Info;
